@@ -1,0 +1,16 @@
+import React, { useContext } from "react";
+import { BookContext } from "../../context/BookProvider";
+import ListCard from "../../ui/ListCard";
+
+const ListedWishList = () => {
+  const { wishList } = useContext(BookContext);
+  return (
+    <div>
+      {wishList.map((book, ind) => (
+        <ListCard key={ind} book={book} />
+      ))}
+    </div>
+  );
+};
+
+export default ListedWishList;
